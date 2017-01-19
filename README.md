@@ -1,2 +1,2 @@
-Dockerfile for [Dockerimage](https://hub.docker.com/r/miron/php7-custom/)
+Dockerfile for [Dockerimage](https://hub.docker.com/r/miron/php56-custom/)
 
