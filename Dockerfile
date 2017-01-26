@@ -9,10 +9,13 @@ RUN set -ex; \
         libpng12-dev \
         libssl-dev \
         libicu-dev \
+	libfreetype6-dev \
     ; \
     rm -rf /var/lib/apt/lists/*; \
+    mkdir -p /usr/include/freetype2/freetype; \
+    ln -s /usr/include/freetype2/freetype.h /usr/include/freetype2/freetype/freetype.h; \
     \
-    docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
+    docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr --with-freetype-dir=/usr/include/freetype2/freetype; \
     docker-php-ext-install gd mysqli opcache exif fileinfo; \
     \
     pecl install xdebug; \
