@@ -29,4 +29,4 @@ RUN set -ex; \
     \
     docker-php-ext-install pdo pdo_mysql
 
-EXPOSE 9000%
+EXPOSE 9000
