@@ -10,6 +10,8 @@ RUN set -ex; \
         libssl-dev \
         libicu-dev \
 	libfreetype6-dev \
+	libmemcached-dev \
+	zlib1g-dev \
     ; \
     rm -rf /var/lib/apt/lists/*; \
     mkdir -p /usr/include/freetype2/freetype; \
@@ -27,6 +29,9 @@ RUN set -ex; \
     pecl install intl; \
     docker-php-ext-install intl; \
     \
-    docker-php-ext-install pdo pdo_mysql
+    docker-php-ext-install pdo pdo_mysql; \
+    \
+    pecl install memcached-2.2.0; \
+    docker-php-ext-enable memcached
 
 EXPOSE 9000%
