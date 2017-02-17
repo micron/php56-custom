@@ -34,4 +34,4 @@ RUN set -ex; \
     pecl install memcached-2.2.0; \
     docker-php-ext-enable memcached
 
-EXPOSE 9000%
+EXPOSE 9000
